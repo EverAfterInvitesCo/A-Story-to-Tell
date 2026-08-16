@@ -1,0 +1,6 @@
+{
+  "name": "EverAfterInvites - Digital Wedding Invitation",
+  "description": "A premium, romantic, editorial-style digital wedding invitation storybook template with watercolor illustrations, smooth scroll transitions, RSVP management, and interactive wedding details.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
