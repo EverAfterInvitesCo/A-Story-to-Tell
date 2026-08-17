@@ -40,7 +40,8 @@ export const initialWeddingConfig: WeddingConfig = {
     name: "The Grand Palace & Gardens",
     address: "Cairo, Egypt",
   },
-  // Adding empty fallback arrays to prevent any .map() crash
+  // Added properties to prevent undefined errors
+  dressCode: "Formal Attire",
   events: [],
   itinerary: [],
   schedule: [],
