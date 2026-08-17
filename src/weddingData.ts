@@ -41,3 +41,7 @@ export const initialWeddingConfig: WeddingConfig = {
     address: "Cairo, Egypt",
   }
 };
+
+// Add these aliases so no import fails regardless of what name components use:
+export const weddingConfig = initialWeddingConfig;
+export default initialWeddingConfig;
