@@ -39,9 +39,14 @@ export const initialWeddingConfig: WeddingConfig = {
   venue: {
     name: "The Grand Palace & Gardens",
     address: "Cairo, Egypt",
-  }
+  },
+  // Adding empty fallback arrays to prevent any .map() crash
+  events: [],
+  itinerary: [],
+  schedule: [],
+  registry: [],
+  story: [],
 };
 
-// Add these aliases so no import fails regardless of what name components use:
 export const weddingConfig = initialWeddingConfig;
 export default initialWeddingConfig;
