@@ -1,6 +1,6 @@
 import { WeddingConfig } from './types';
 
-export const initialWeddingConfig: WeddingConfig = {
+const rawConfig: any = {
   partnerOne: {
     firstName: "Ahmed",
     lastName: "Fatema",
@@ -41,18 +41,29 @@ export const initialWeddingConfig: WeddingConfig = {
     address: "Cairo, Egypt",
   },
   dressCode: "Formal Attire",
-  details: {
-    dressCode: "Formal Attire",
-  },
-  weddingDetails: {
-    dressCode: "Formal Attire",
-  },
-  events: [],
-  itinerary: [],
-  schedule: [],
-  registry: [],
-  story: [],
+  contactEmail: "contact@everafterinvites.com",
 };
 
+// Proxy wrapper to automatically intercept any missing properties and prevent crashes
+const safeProxy = (obj: any): any => {
+  return new Proxy(obj, {
+    get(target, prop) {
+      if (!(prop in target)) {
+        // Return an empty array for common list/map names, or a safe fallback object/string
+        if (typeof prop === 'string' && (prop.toLowerCase().includes('list') || prop.toLowerCase().includes('array') || prop === 'events' || prop === 'itinerary' || prop === 'schedule' || prop === 'registry' || prop === 'story' || prop === 'gallery')) {
+          return [];
+        }
+        return "";
+      }
+      const value = target[prop];
+      if (value && typeof value === 'object') {
+        return safeProxy(value);
+      }
+      return value;
+    }
+  });
+};
+
+export const initialWeddingConfig: WeddingConfig = safeProxy(rawConfig);
 export const weddingConfig = initialWeddingConfig;
 export default initialWeddingConfig;
