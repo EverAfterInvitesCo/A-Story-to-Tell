@@ -40,8 +40,13 @@ export const initialWeddingConfig: WeddingConfig = {
     name: "The Grand Palace & Gardens",
     address: "Cairo, Egypt",
   },
-  // Added properties to prevent undefined errors
   dressCode: "Formal Attire",
+  details: {
+    dressCode: "Formal Attire",
+  },
+  weddingDetails: {
+    dressCode: "Formal Attire",
+  },
   events: [],
   itinerary: [],
   schedule: [],
