@@ -3,7 +3,7 @@ import { WeddingConfig } from './types';
 export const initialWeddingConfig: WeddingConfig = {
   partnerOne: {
     firstName: "Ahmed",
-    lastName: "Fatema", // Updated per your latest workflow details
+    lastName: "Fatema",
   },
   partnerTwo: {
     firstName: "Fatema",
@@ -34,7 +34,7 @@ export const initialWeddingConfig: WeddingConfig = {
     `${import.meta.env.BASE_URL}media/img6.jpg`,
   ],
   audio: {
-    backgroundMusic: `${import.meta.env.BASE_URL}media/audio.mp3`,
+    backgroundMusic: `${import.meta.env.BASE_URL}media/audio_mono_download.mp3`,
   },
   venue: {
     name: "The Grand Palace & Gardens",
